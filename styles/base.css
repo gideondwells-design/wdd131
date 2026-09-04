@@ -1,131 +1,123 @@
-/* base.css - clean responsive profile layout */
+/* base.css - ID card focused, responsive, accessible */
 
 /* --- Reset / base --- */
 * { box-sizing: border-box; }
-html,body { height:100%; margin:0; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background:#f6f7fb; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+html, body { height:100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#1f2937; background:#f5f7fb; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 img { max-width:100%; height:auto; display:block; }
 
 /* --- Page container --- */
-header, main, footer { width:100%; max-width:1100px; margin:0 auto; padding-left:20px; padding-right:20px; }
+header, main, footer { max-width:1100px; margin:0 auto; padding:0 20px; }
 
-/* --- Top bar / header --- */
+/* --- Header / nav --- */
 header {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:16px;
   padding:18px 0;
-  border-bottom:1px solid rgba(34,34,34,0.06);
-  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+  background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.95));
+  border-bottom:1px solid rgba(15,23,42,0.06);
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:20;
   backdrop-filter: blur(4px);
 }
+#course-title { font-weight:700; color:#0b1220; font-size:0.95rem; }
+nav[aria-label] ul, header nav ul { list-style:none; margin:0; padding:0; display:flex; gap:12px; align-items:center; }
+nav a { text-decoration:none; color:#0b3bff; padding:8px 10px; border-radius:8px; font-weight:600; transition:all .14s ease; }
+nav a:hover, nav a:focus { background:#eef2ff; transform:translateY(-2px); outline:none; }
 
-#course-title {
-  font-weight:700;
-  color:#0f1724;
-  font-size:0.95rem;
-  letter-spacing:0.2px;
-}
-
-/* Navigation */
-nav[aria-label] ul { list-style:none; margin:0; padding:0; display:flex; gap:14px; align-items:center; }
-nav a {
-  text-decoration:none;
-  color:#0f1724;
-  padding:8px 12px;
-  border-radius:8px;
-  font-weight:600;
-  font-size:0.92rem;
-  transition:all .18s ease;
-}
-nav a:hover, nav a:focus {
-  background:#eef2ff;
-  color:#0b3bff;
-  outline:none;
-  transform:translateY(-1px);
-}
-
-/* --- Main content --- */
+/* --- Main layout --- */
 main { padding:36px 0 48px; }
+main > h1 { margin:0 0 20px; font-size:2rem; font-weight:800; color:#071133; text-align:center; }
 
-/* Page title */
-main > h1 {
-  margin:0 0 22px 0;
-  font-size:2rem;
-  font-weight:800;
-  color:#071133;
-  text-align:center;
-}
-
-/* Grid layout for cards */
+/* Grid wrapper for two-column layout */
 .cards {
   display:grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 340px;
   gap:28px;
   align-items:start;
 }
 
-/* Card style */
+/* Generic card */
 .card {
   background:#ffffff;
   border-radius:12px;
   padding:20px;
-  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+  box-shadow:0 8px 24px rgba(16,24,40,0.06);
   border:1px solid rgba(16,24,40,0.03);
 }
 
-/* Left column card content */
-.card h2 {
-  margin:0 0 10px 0;
-  font-size:1.15rem;
-  color:#0b2545;
+/* --- ID card specifics (no HTML changes required) --- */
+/* Targets element with id="id-card" or fallback to first .card if id not present */
+#id-card, .card#id-card, .card.id-card { /* explicit id */
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  border-left:6px solid #0b3bff;
+  padding:22px;
 }
-.card p { line-height:1.6; color:#334155; margin:0 0 14px 0; }
 
-/* Portrait figure */
-figure.portrait {
-  display:flex;
-  gap:16px;
-  align-items:center;
-  margin:12px 0 0 0;
+/* If user didn't add id, this still styles the first .card visually as an ID card */
+.card:first-of-type { /* gentle fallback */
+  /* no forced left border here to avoid overriding other cards */
 }
-figure.portrait img {
-  width:120px;
-  height:120px;
+
+/* ID grid: portrait + info + flag inside the same card */
+#id-card .id-grid, .card#id-card .id-grid {
+  display:grid;
+  grid-template-columns: 140px 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+/* Portrait */
+figure.id-photo, .id-photo {
+  margin:0;
+  text-align:center;
+}
+figure.id-photo img, .id-photo img {
+  width:128px;
+  height:128px;
   object-fit:cover;
   border-radius:12px;
-  box-shadow:0 6px 18px rgba(11,37,88,0.06);
-  border:1px solid rgba(11,37,88,0.06);
+  border:2px solid rgba(11,37,88,0.06);
+  box-shadow:0 10px 26px rgba(11,37,88,0.06);
 }
-figure.portrait figcaption {
+figure.id-photo figcaption, .id-photo figcaption {
+  margin-top:10px;
   font-weight:700;
   color:#071133;
-  font-size:0.98rem;
+  font-size:0.95rem;
 }
 
-/* Right column specifics (resources + flag) */
-.aside {
+/* Info column */
+#id-card .id-info, .card#id-card .id-info {
   display:flex;
   flex-direction:column;
-  gap:18px;
+  gap:8px;
 }
-.flag {
+#id-card .id-info h3, .id-info h3 { margin:0; font-size:1rem; color:#0b2545; }
+#id-card .id-info p, .id-info p { margin:0; color:#334155; line-height:1.6; }
+
+/* Flag block inside the same ID card */
+figure.id-flag, .id-flag {
   display:flex;
   gap:12px;
   align-items:center;
+  margin-top:8px;
 }
-.flag img {
-  width:120px;
+figure.id-flag img, .id-flag img {
+  width:96px;
   height:auto;
-  border-radius:6px;
+  border-radius:8px;
   border:1px solid rgba(16,24,40,0.04);
 }
-.flag figcaption { font-size:0.9rem; color:#334155; }
+figure.id-flag figcaption, .id-flag figcaption {
+  font-size:0.9rem;
+  color:#475569;
+}
 
-/* Resource list */
+/* --- Resources aside (right column) --- */
+.aside { display:flex; flex-direction:column; gap:18px; }
 .resources ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
 .resources a {
   display:inline-block;
@@ -137,37 +129,25 @@ figure.portrait figcaption {
   font-weight:600;
   transition:transform .12s ease, box-shadow .12s ease;
 }
-.resources a:hover, .resources a:focus { transform:translateY(-3px); box-shadow:0 8px 20px rgba(11,59,255,0.06); }
+.resources a:hover, .resources a:focus { transform:translateY(-3px); box-shadow:0 10px 26px rgba(11,59,255,0.06); }
 
-/* Footer */
-footer {
-  margin-top:28px;
-  padding:18px 0 48px;
-  text-align:center;
-  color:#475569;
-  font-size:0.95rem;
-}
+/* --- Footer --- */
+footer { margin-top:28px; padding:18px 0 48px; text-align:center; color:#475569; font-size:0.95rem; }
 footer time { font-weight:700; color:#0b2545; }
 
-/* Small caption under screenshot (if used) */
-.caption {
-  margin-top:8px;
-  font-size:0.82rem;
-  color:#94a3b8;
-}
+/* --- Accessibility and focus --- */
+a:focus { outline:3px solid rgba(11,59,255,0.14); outline-offset:3px; border-radius:8px; }
 
 /* --- Responsive --- */
 @media (max-width:980px) {
   .cards { grid-template-columns: 1fr; }
   main > h1 { font-size:1.6rem; text-align:left; }
-  header { padding-left:14px; padding-right:14px; }
-  nav[aria-label] ul { gap:10px; }
-  figure.portrait img { width:96px; height:96px; }
-  .aside { order:2; }
+  #id-card .id-grid, .card#id-card .id-grid { grid-template-columns: 1fr; }
+  figure.id-photo img, .id-photo img { width:110px; height:110px; margin:0 auto; }
+  figure.id-flag { justify-content:flex-start; }
 }
 
-/* Focus styles for accessibility */
-a:focus { outline:3px solid rgba(11,59,255,0.14); outline-offset:3px; border-radius:8px; }
+/* --- Utility tweaks --- */
+.skip-link { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus { left:12px; top:12px; width:auto; height:auto; padding:8px 12px; background:#0b3bff; color:#fff; border-radius:6px; z-index:40; }
 
-/* Utility */
-.container { max-width:1100px; margin:0 auto; padding:0 20px; }
