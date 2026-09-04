@@ -51,14 +51,12 @@ header {
     align-items: center;
 }
 
-nav {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
+
 
 header span {
     display: block;
-
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 
