@@ -106,7 +106,7 @@ nav ul li a:hover {
     color: black;
 }
 
-section.card img {
+.card img {
     width: auto;
     height: 10%;
     border-radius: 8px;
