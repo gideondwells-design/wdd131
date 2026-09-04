@@ -63,12 +63,6 @@ header a {
     color: white;
 }
 
-header {
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    padding-left: 1.5rem;
-}
-
 header span {
     display: block;
 }
