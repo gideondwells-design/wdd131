@@ -51,14 +51,9 @@ header {
     align-items: center;
 }
 
-nav a,
-header a {
-    display: block;
-    padding: 0.5rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
+nav {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 header span {
