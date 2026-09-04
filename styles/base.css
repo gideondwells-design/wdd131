@@ -51,14 +51,15 @@ header {
     align-items: center;
 }
 
-
-
 header span {
     display: block;
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+nav {
+    background-color: var(--primary-color);
+}
 
 nav ul {
     display: flex;
