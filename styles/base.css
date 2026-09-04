@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 
-section.card.image {
+section.card img {
     width: 50%;
     height: auto;
     border-radius: 8px;
