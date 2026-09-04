@@ -1,0 +1,173 @@
+/* base.css - clean responsive profile layout */
+
+/* --- Reset / base --- */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background:#f6f7fb; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+img { max-width:100%; height:auto; display:block; }
+
+/* --- Page container --- */
+header, main, footer { width:100%; max-width:1100px; margin:0 auto; padding-left:20px; padding-right:20px; }
+
+/* --- Top bar / header --- */
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(34,34,34,0.06);
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter: blur(4px);
+}
+
+#course-title {
+  font-weight:700;
+  color:#0f1724;
+  font-size:0.95rem;
+  letter-spacing:0.2px;
+}
+
+/* Navigation */
+nav[aria-label] ul { list-style:none; margin:0; padding:0; display:flex; gap:14px; align-items:center; }
+nav a {
+  text-decoration:none;
+  color:#0f1724;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:0.92rem;
+  transition:all .18s ease;
+}
+nav a:hover, nav a:focus {
+  background:#eef2ff;
+  color:#0b3bff;
+  outline:none;
+  transform:translateY(-1px);
+}
+
+/* --- Main content --- */
+main { padding:36px 0 48px; }
+
+/* Page title */
+main > h1 {
+  margin:0 0 22px 0;
+  font-size:2rem;
+  font-weight:800;
+  color:#071133;
+  text-align:center;
+}
+
+/* Grid layout for cards */
+.cards {
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px;
+  align-items:start;
+}
+
+/* Card style */
+.card {
+  background:#ffffff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+  border:1px solid rgba(16,24,40,0.03);
+}
+
+/* Left column card content */
+.card h2 {
+  margin:0 0 10px 0;
+  font-size:1.15rem;
+  color:#0b2545;
+}
+.card p { line-height:1.6; color:#334155; margin:0 0 14px 0; }
+
+/* Portrait figure */
+figure.portrait {
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin:12px 0 0 0;
+}
+figure.portrait img {
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(11,37,88,0.06);
+  border:1px solid rgba(11,37,88,0.06);
+}
+figure.portrait figcaption {
+  font-weight:700;
+  color:#071133;
+  font-size:0.98rem;
+}
+
+/* Right column specifics (resources + flag) */
+.aside {
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.flag {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.flag img {
+  width:120px;
+  height:auto;
+  border-radius:6px;
+  border:1px solid rgba(16,24,40,0.04);
+}
+.flag figcaption { font-size:0.9rem; color:#334155; }
+
+/* Resource list */
+.resources ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.resources a {
+  display:inline-block;
+  padding:8px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#0b3bff;
+  background:linear-gradient(180deg, rgba(11,59,255,0.04), rgba(11,59,255,0.02));
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.resources a:hover, .resources a:focus { transform:translateY(-3px); box-shadow:0 8px 20px rgba(11,59,255,0.06); }
+
+/* Footer */
+footer {
+  margin-top:28px;
+  padding:18px 0 48px;
+  text-align:center;
+  color:#475569;
+  font-size:0.95rem;
+}
+footer time { font-weight:700; color:#0b2545; }
+
+/* Small caption under screenshot (if used) */
+.caption {
+  margin-top:8px;
+  font-size:0.82rem;
+  color:#94a3b8;
+}
+
+/* --- Responsive --- */
+@media (max-width:980px) {
+  .cards { grid-template-columns: 1fr; }
+  main > h1 { font-size:1.6rem; text-align:left; }
+  header { padding-left:14px; padding-right:14px; }
+  nav[aria-label] ul { gap:10px; }
+  figure.portrait img { width:96px; height:96px; }
+  .aside { order:2; }
+}
+
+/* Focus styles for accessibility */
+a:focus { outline:3px solid rgba(11,59,255,0.14); outline-offset:3px; border-radius:8px; }
+
+/* Utility */
+.container { max-width:1100px; margin:0 auto; padding:0 20px; }
