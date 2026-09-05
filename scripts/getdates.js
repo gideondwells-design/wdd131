@@ -1,2 +1,6 @@
-9/5/2026
-document.getElementById("lastModified").innerHTML = document.lastModified;
+if (document.getElementById("currentyear")) {
+	document.getElementById("currentyear").textContent = new Date().getFullYear();
+}
+if (document.getElementById("lastupdated")) {
+	document.getElementById("lastupdated").textContent = document.lastModified;
+}
