@@ -17,6 +17,13 @@
   font-style: normal;
 }
 
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    text-align: relative;
+}
+
 nav {
     background-color: var(--primary-color);
     margin: 0 auto;
@@ -67,3 +74,35 @@ main {
 	grid-gap: 25px;
 	place-items: center;
 }
+
+figure {
+	background-color: #fff;
+
+}
+
+img {
+	width: 100%;
+	height: auto;
+	margin: 0.5rem;
+}
+
+.temple-gallery-title {
+  text-align: center;
+  font-family: "Zeyada", cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}   
