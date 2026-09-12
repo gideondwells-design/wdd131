@@ -1,0 +1,69 @@
+:root {
+    --primary-color: navy;
+    --secondary-color: white;
+    --heading-font: ;
+    --body-font: ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.zeyada-regular {
+  font-family: "Zeyada", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav {
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    border: 1px solid black;
+}
+
+.active {
+    color: black;
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        flex: 1 1 100%;
+    }
+
+
+}
+
+main { 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.temple-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 25px;
+	place-items: center;
+}
