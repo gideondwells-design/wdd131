@@ -28,6 +28,7 @@ nav {
     background-color: var(--primary-color);
     margin: 0 auto;
     max-width: 800px;
+    display: flex;
 }
 
 nav ul {
