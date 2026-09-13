@@ -21,7 +21,7 @@ header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem;
-    text-align: relative;
+    text-align: center;
 }
 
 nav {
