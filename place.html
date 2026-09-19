@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Place Website</title>
+        <title>Japan Website</title>
         <meta name="description" content="This is a sample HTML document for a place website.">
         <meta name="author" content="Gideon Wells">
         <link rel="stylesheet" href="styles/place.css">
+        <link rel="stylesheet" href="styles/place-large.css">
         <script defer src="scripts/place.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +15,33 @@
     </head>
     <body>
         <header>
-
+            <h1>Japan</h1>
         </header>
         <main>
-            
+            <section id="SmallJapan">
+                <img src="" alt="A beautiful view of Japan">
+            </section>
+            <section id="LargeJapan">
+                <img src="" alt="A beautiful view of Japan">
+            </section>
+            <section id="JapanInfo">
+                <h2>Data</h2>
+                <p>Area: 377,913 km²</p>
+                <p>Population: 126 million</p>
+                <p>Capital: Tokyo</p>
+                <p>Language: Japanese</p>
+                <p>Currency: Japanese Yen</p>
+                <p>Time Zone: Japan Standard Time</p>
+                <p>Calling Code: +81</p>
+                <p>Internet TLD: .jp</p>
+            </section>
+            <section id="Weather">
+                <h2>Weather</h2>
+                <p>Temperature: <span id="temperature"></span></p>
+                <p>Condition: <span id="condition"></span></p>
+                <p>Wind Speed: <span id="windSpeed"></span></p>
+                <p>Wind Chill: <span id="windChill"></span></p>
+            </section>
         </main>
         <footer>
             <p>&copy; <span id="currentyear"></span> Gideon David Wells, Indiana. All rights reserved.</p>
