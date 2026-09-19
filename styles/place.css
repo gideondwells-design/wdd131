@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #;
+    --secondary-color: #;
+    --accent1-color: #;
+    --accent2-color: #;
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +16,9 @@
 .hero img {
   width: 100%;
   height: auto;
+}
+
+.svg {
+  width: 500px;
+  height: 500px;
 }
