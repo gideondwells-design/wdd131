@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #;
-    --secondary-color: #;
-    --accent1-color: #;
-    --accent2-color: #;
+    --primary-color: #F4A261;
+    --secondary-color: #feaec1;
+    --accent1-color: #264653;
+    --accent2-color: #e9c46e;
+    --text-color: white;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -11,6 +12,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h1, h2, p {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+
+}
+main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px ;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-bottom: 1rem solid var(--secondary-color);
+    padding: 0.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1
+{
+    font-size: 4rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .hero img {
