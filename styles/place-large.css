@@ -1,4 +1,25 @@
-@media  screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {
+    body {
+        overflow-y: hidden;
+    }
+
+    main {
+        position: relative;
+        padding: 0;
+        min-height: calc(100vh - 120px);
+    }
+
+    #hero {
+        position: relative;
+    }
+
+    #hero img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
     #Weather picture {
         display: none;
     }
@@ -7,6 +28,26 @@
         content: " ⛅";
     }
 
-    
-    
+    #JapanInfo,
+    #Weather {
+        position: absolute;
+        z-index: 2;
+        width: 220px;
+        min-height: 180px;
+        padding: 0.75rem;
+        justify-content: center;
+        background: rgba(244, 162, 97, 0.85);
+        border: 2px solid rgba(254, 174, 193, 0.8);
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    }
+
+    #JapanInfo {
+        top: 0.75rem;
+        left: 0.75rem;
+    }
+
+    #Weather {
+        right: 0.75rem;
+        bottom: 0.75rem;
+    }
 }

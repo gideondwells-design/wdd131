@@ -23,9 +23,11 @@ body {
 h2, p {
     font-family: var(--heading-font);
     color: var(--text-color);
-    font-weight: 1rem;
+    font-weight: 7rem;
+    text-align: center;
 }
- main, footer {
+
+main, footer {
     margin: 0 auto;
     padding: 20px ;
     width: 100%;
@@ -43,7 +45,7 @@ header {
 
 h1
 {
-    font-size: 2rem;
+    font-size: 10rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: var(--text-color);
     font-family: var(--heading-font);
@@ -54,6 +56,10 @@ section {
     background-color: var(--primary-color);
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #hero,
@@ -68,11 +74,6 @@ section {
 #Weather picture img {
   width: 80px;
   height: auto;
-}
-
-section {
-    display: flex;
-    flex-direction: column;
 }
 
 footer {
