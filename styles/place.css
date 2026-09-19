@@ -14,40 +14,73 @@
     box-sizing: border-box;
 }
 
-h1, h2, p {
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h2, p {
     font-family: var(--heading-font);
     color: var(--text-color);
-
+    font-weight: 1rem;
 }
-main, footer {
-    max-width: 1000px;
+ main, footer {
     margin: 0 auto;
     padding: 20px ;
+    width: 100%;
 }
 
 header {
     display: flex;
-    width: 100%;
     background-color: var(--primary-color);
     border-bottom: 1rem solid var(--secondary-color);
     padding: 0.5rem;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
 h1
 {
-    font-size: 4rem;
+    font-size: 2rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
+    color: var(--text-color);
+    font-family: var(--heading-font);
 }
 
-.hero img {
-  width: 600px;
-  height: auto;
+section {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero,
+#hero picture,
+#hero img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
 }
 
 #Weather picture img {
   width: 80px;
   height: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border-top: 1rem solid var(--secondary-color);
 }
 
