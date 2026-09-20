@@ -23,7 +23,6 @@ body {
 h2, p {
     font-family: var(--heading-font);
     color: var(--text-color);
-    font-weight: 7rem;
     text-align: center;
 }
 
