@@ -28,8 +28,12 @@ h2, p {
 
 main, footer {
     margin: 0 auto;
-    padding: 20px ;
+    padding: 0;
     width: 100%;
+}
+
+footer {
+    margin-top: 0;
 }
 
 header {
