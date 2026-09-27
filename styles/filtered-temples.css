@@ -12,15 +12,16 @@
 }
 
 html, body {
-    height: 100%;
+    height: auto;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-y: auto;
 }
 
 .zeyada-regular {
@@ -40,7 +41,7 @@ header {
     left: 0;
     right: 0;
     z-index: 20;
-    height: 90px;
+    height: 110px;
 }
 
 nav {
@@ -143,7 +144,7 @@ main {
   padding: 110px 1rem 90px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .temple-gallery {
