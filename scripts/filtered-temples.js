@@ -88,3 +88,43 @@ const temples = [
     "https://churchofjesuschristtemples.org/assets/img/temples/london-england-temple/london-england-temple-56886-main.jpg"
   },
 ];
+
+createTemplecard();
+
+function createTemplecard() {
+    temples.forEach((temple) => {
+        let templeCard = document.createElement("section");
+        let templeName = document.createElement("h3");
+        let templeLocation = document.createElement("p");
+        let templeDedicated = document.createElement("p");
+        let templeArea = document.createElement("p");
+        let templeImage = document.createElement("img");
+
+        templeName.textContent = temple.templeName;
+        templeLocation.textContent = temple.location;
+        templeDedicated.textContent = "Dedicated: " + temple.dedicated;
+        templeArea.textContent = "Area: " + temple.area + " sq ft";
+        templeImage.setAttribute("src", temple.imageUrl);
+        templeImage.setAttribute("alt", temple.templeName);
+        templeImage.setAttribute("loading", "lazy");
+
+        templeCard.style.background = "linear-gradient(135deg, #203a5c, #14273f)";
+        templeCard.style.color = "#eef6ff";
+        templeCard.style.borderRadius = "12px";
+        templeCard.style.padding = "1rem";
+        templeCard.style.boxShadow = "0 6px 18px rgba(0, 0, 0, 0.25)";
+        templeCard.style.border = "1px solid rgba(255, 255, 255, 0.08)";
+        templeCard.style.width = "100%";
+        templeImage.style.borderRadius = "8px";
+        templeImage.style.marginTop = "0.75rem";
+        templeImage.style.display = "block";
+
+        templeCard.appendChild(templeName);
+        templeCard.appendChild(templeLocation);
+        templeCard.appendChild(templeDedicated);
+        templeCard.appendChild(templeArea);
+        templeCard.appendChild(templeImage);
+
+        document.querySelector(".temple-gallery").appendChild(templeCard);
+    });
+}
