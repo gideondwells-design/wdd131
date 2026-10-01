@@ -1,7 +1,7 @@
 :root {
     --primary-color: purple;
     --secondary-color: white;
-    --text-color: black;
+    --text-color: #1e1a1f;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -10,4 +10,64 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header,
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    line-height: 1.2;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.siteplan {
+    display: grid;
+    gap: 1.5rem;
+}
+
+section {
+    background: #f4ecf8;
+    border: 2px solid #d9b3e6;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+}
+
+figure {
+    margin-top: 0.5rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid purple;
+    border-radius: 8px;
+}
+
+footer {
+    font-size: 0.95rem;
 }
