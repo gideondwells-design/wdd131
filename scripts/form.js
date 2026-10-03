@@ -33,3 +33,28 @@ if (document.getElementById("currentyear")) {
 if (document.getElementById("lastupdated")) {
 	document.getElementById("lastupdated").textContent = document.lastModified;
 }
+
+const REVIEW_COUNT_KEY = "reviewsCompleted";
+const REVIEW_PAGE_NAME = "review.html";
+
+function getReviewCount() {
+	if (!("localStorage" in window)) {
+		return 0;
+	}
+
+	const savedValue = Number(window.localStorage.getItem(REVIEW_COUNT_KEY));
+	return Number.isFinite(savedValue) && savedValue >= 0 ? savedValue : 0;
+}
+
+function incrementReviewCount() {
+	if (
+		window.location.pathname.toLowerCase().endsWith(REVIEW_PAGE_NAME) &&
+		window.location.search &&
+		window.location.search.includes("productName")
+	) {
+		const nextCount = getReviewCount() + 1;
+		window.localStorage.setItem(REVIEW_COUNT_KEY, String(nextCount));
+	}
+}
+
+incrementReviewCount();
