@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <meta name="description" content="A simple form">
+            <meta name="author" content="Gideon Wells">
+        <link rel="stylesheet" href="styles/form.css">  
+        <script defer src="scripts/form.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Product View</h1>
+        </header>
+        <main>
+
+            <form>
+                <div class="product-name">
+                    <label for="productName">Product Name:</label>
+                    <select id="productName" name="productName" required>
+                        <option value="">Select a product</option>
+                    </select>
+                </div>
+    
+                <div class="stars">
+                    <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
+                    <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
+                    <input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
+                    <input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
+                    <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
+                </div>
+    
+                <div class="date-of-installation">
+                    <label for="dateOfInstallation">Date of Installation:</label>
+                    <input type="date" id="dateOfInstallation" name="dateOfInstallation" required>
+                </div>
+    
+                <div class="useful-features">
+                    <label for="whichfeatures">Which features did you find useful?</label>
+                    <label for="allthatapply">(select all that apply)</label>
+                    
+                    <label for="durability">Durability</label>
+                    <input type="checkbox" id="durability" name="features" value="durability">
+                    <label for="easeOfUse">Ease of Use</label>
+                    <input type="checkbox" id="easeOfUse" name="features" value="easeOfUse">
+                    <label for="performance">Performance</label>
+                    <input type="checkbox" id="performance" name="features" value="performance">
+                    <label for="design">Design</label>
+                    <input type="checkbox" id="design" name="features" value="design" >
+                </div>
+
+                <div class="writton-reveiw">
+                    <label for="writtenReview">Written Review (optional):</label>
+                    <textarea id="writtenReview" name="writtenReview" rows="4" cols="50"></textarea>
+                </div>
+                
+                <div class="user-name">
+                    <label for="userName">Your Name (optional):</label>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Submit Review">
+                </div>
+            </form>                 
+        </main>
+        <footer>
+            <p>&copy; <span id="currentyear"></span> Gideon David Wells, Indiana. All rights reserved.</p>
+            <p>Last Updated: <span id="lastupdated"></span></p>
+        </footer>
+    </body>
+</html>

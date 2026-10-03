@@ -1,0 +1,195 @@
+:root {
+  --primary-color: #00008B;
+  --secondary-color: #F28C28;
+  --accent-color: #FFF4EC;
+  --field-color: #FFFFFF;
+  --text-color: #1F2A37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background: linear-gradient(180deg, #f8f9f5 0%, #eef3ee 100%);
+    color: var(--accent1-color);
+    line-height: 1.6;
+}
+
+header,
+main,
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+header h1 {
+    color: white;
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem 3rem;
+}
+
+form {
+    width: min(100%, 680px);
+    background: var(--secondary-color);
+    border: 1px solid rgba(38, 70, 83, 0.15);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    display: grid;
+    gap: 1.5rem;
+}
+
+form > div {
+    display: grid;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: var(--accent1-color);
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    border: 1px solid rgba(38, 70, 83, 0.35);
+    border-radius: 10px;
+    padding: 0.8rem 0.9rem;
+    font: inherit;
+    background: white;
+    color: var(--accent1-color);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 0.25rem;
+    padding-top: 0.25rem;
+}
+
+.stars > label {
+    color: #d9d9d9;
+    width: 34px;
+    height: 34px;
+    font-size: 2rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.stars > label:hover,
+.stars > label:hover ~ label,
+.stars input:checked ~ label {
+    color: yellow;
+    transform: scale(1.05);
+}
+
+.stars > label::before {
+    content: "\2606";
+}
+
+.stars input:checked ~ label::before {
+    content: "\2605";
+}
+
+.useful-features {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.useful-features .selection-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.useful-features .selection-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f3f7f4;
+    border: 1px solid rgba(38, 70, 83, 0.15);
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem;
+    font-weight: 500;
+}
+
+.useful-features input[type="checkbox"] {
+    accent-color: var(--secondary-color);
+    width: 1rem;
+    height: 1rem;
+}
+
+.submit input[type="submit"] {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.5rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit input[type="submit"]:hover {
+    background: black;
+    color: white;
+    transform: translateY(-1px);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0.35rem 0;
+}
+
+@media (max-width: 500px) {
+    form {
+        padding: 1.25rem;
+    }
+
+    .stars > label {
+        width: 28px;
+        height: 28px;
+        font-size: 1.7rem;
+    }
+}
+
