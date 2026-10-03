@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Product Review</title>
-        <meta name="description" content="A simple form for submitting product reviews">
+        <meta name="description" content="A simple form for submitting product reviews for a fictional product">
             <meta name="author" content="Gideon Wells">
         <link rel="stylesheet" href="styles/form.css">  
         <script defer src="scripts/form.js"></script>
@@ -15,11 +15,11 @@
         </header>
         <main>
 
-            <form get action="review.html">
+            <form method="get" action="review.html">
                 <div class="product-name">
                     <label for="productName">Product Name:</label>
                     <select id="productName" name="productName" required>
-                        <option value="">Select a product</option>
+                        <option value="" selected disabled>Select a product</option>
                     </select>
                 </div>
     
@@ -37,8 +37,8 @@
                 </div>
     
                 <div class="useful-features">
-                    <label for="whichfeatures">Which features did you find useful?</label>
-                    <label for="allthatapply">(select all that apply)</label>
+                    <label for="whichfeatures" id="whichfeatures-label">Which features did you find useful?</label>
+                    <label for="allthatapply" id="allthatapply-label">(select all that apply)</label>
                     
                     <label for="durability">Durability</label>
                     <input type="checkbox" id="durability" name="features" value="durability">
