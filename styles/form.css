@@ -13,7 +13,6 @@
 }
 
 body {
-    font-family: var(--body-font);
     background: linear-gradient(180deg, #f8f9f5 0%, #eef3ee 100%);
     color: var(--accent1-color);
     line-height: 1.6;
