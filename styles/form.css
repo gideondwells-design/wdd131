@@ -1,9 +1,9 @@
 :root {
   --primary-color: #00008B;
   --secondary-color: #F28C28;
-  --accent-color: #FFF4EC;
-  --field-color: #FFFFFF;
-  --text-color: #1F2A37;
+  --text-color1: #FFFFFF;
+  --text-color2: #000000;
+  --primary-color-dark: #000055;
 }
 
 * {
@@ -34,7 +34,7 @@ header {
 }
 
 header h1 {
-    color: white;
+    color: var(--text-color1);
     font-family: var(--heading-font);
     font-size: clamp(2rem, 4vw, 3rem);
 }
@@ -63,7 +63,7 @@ form > div {
 
 label {
     font-weight: 600;
-    color: var(--accent1-color);
+    color: var(--text-color2);
 }
 
 select,
@@ -97,7 +97,7 @@ input[type="radio"] {
 }
 
 .stars > label {
-    color: #d9d9d9;
+    color: var(--text-color2);
     width: 34px;
     height: 34px;
     font-size: 2rem;
@@ -154,7 +154,7 @@ input[type="radio"] {
 
 .submit input[type="submit"] {
     background: var(--primary-color);
-    color: white;
+    color: var(--text-color1);
     border: none;
     border-radius: 999px;
     padding: 0.9rem 1.5rem;
@@ -165,14 +165,14 @@ input[type="radio"] {
 }
 
 .submit input[type="submit"]:hover {
-    background: black;
-    color: white;
+    background: var(--primary-color-dark);
+    color: var(--text-color1);
     transform: translateY(-1px);
 }
 
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color1);
     text-align: center;
     padding: 1rem;
 }
