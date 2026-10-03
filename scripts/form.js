@@ -26,6 +26,15 @@ const products = [
   }
 ];
 
+const productNameSelect = document.getElementById("productName");
+if (productNameSelect) {
+  products.forEach((product) => {
+    const option = document.createElement("option");
+    option.value = product.name;
+    option.textContent = product.name;
+    productNameSelect.appendChild(option);
+  });
+}
 
 if (document.getElementById("currentyear")) {
 	document.getElementById("currentyear").textContent = new Date().getFullYear();
