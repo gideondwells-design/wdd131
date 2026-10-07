@@ -28,7 +28,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+header img {
+    max-height: 5rem;
+    width: auto;
 }
 
 header::after {
