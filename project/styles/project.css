@@ -11,33 +11,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+header,
+main,
+footer {
+    padding: 1rem;
+
+}
 
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     font-family: var(--heading-font);
-    padding: 1rem;
-    background-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 20;
-    height: 110px;
+    height: 96px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1.25rem;
 }
 
 header img {
-    max-height: 6rem;
-    width: auto;
-    border-radius: 12px;
+    width: 4.25rem;
+    height: 4.25rem;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 header h1 {
-    font-size: 2rem;
+    flex: 1;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
 }
 
 header::after {
@@ -55,30 +61,61 @@ header::after {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+nav ul[hidden] {
+    display: flex;
 }
 
 nav a {
     color: var(--secondary-color);
     text-decoration: none;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.7rem 0.9rem;
+    border-radius: 4px;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    outline: none;
 }
 
 .menu-toggle {
     display: none;
 }
 
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+
 @media (max-width: 770px) {
     header {
         height: auto;
-        min-height: 90px;
+        min-height: 82px;
         display: grid;
-        grid-template-columns: 56px minmax(0, 1fr) 56px;
+        grid-template-columns: 48px minmax(0, 1fr) 48px;
         gap: 0.75rem;
-        padding: 0.75rem;
+        padding: 0.65rem 0.75rem;
+    }
+
+    header img {
+        width: 3rem;
+        height: 3rem;
     }
 
     header h1 {
         text-align: center;
+        font-size: 1.25rem;
     }
 
     nav {
@@ -155,3 +192,6 @@ footer {
     right: 0;
     z-index: 20;
 }
+
+
+
