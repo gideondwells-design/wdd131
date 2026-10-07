@@ -33,6 +33,7 @@ header {
 header img {
     max-height: 5rem;
     width: auto;
+
 }
 
 header::after {
@@ -70,11 +71,6 @@ nav a {
         grid-template-columns: 56px minmax(0, 1fr) 56px;
         gap: 0.75rem;
         padding: 0.75rem;
-    }
-
-    header img {
-        width: 56px;
-        height: auto;
     }
 
     header h1 {
