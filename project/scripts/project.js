@@ -5,6 +5,27 @@ if (document.getElementById("lastupdated")) {
 	document.getElementById("lastupdated").textContent = document.lastModified;
 }
 
+const interestForm = document.querySelector("#interest-form");
+const interestTally = document.querySelector("#interest-tally");
+const interestTallyKey = "shsArcheryInterestTally";
+
+if (interestForm && interestTally) {
+	const updateInterestTally = () => {
+		const savedCount = Number(localStorage.getItem(interestTallyKey));
+		const count = Number.isSafeInteger(savedCount) && savedCount >= 0 ? savedCount : 0;
+		interestTally.textContent = `Interest registrations saved on this device: ${count}`;
+		return count;
+	};
+
+	updateInterestTally();
+	interestForm.addEventListener("submit", (event) => {
+		event.preventDefault();
+		localStorage.setItem(interestTallyKey, String(updateInterestTally() + 1));
+		updateInterestTally();
+		interestForm.reset();
+	});
+}
+
 const siteHeader = document.querySelector("header");
 
 if (siteHeader) {

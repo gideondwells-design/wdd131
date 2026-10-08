@@ -177,9 +177,81 @@ nav a:focus-visible {
 }
 
 .home-content p {
-    max-width: 60ch;
+    max-width: 55ch;
     margin-inline: auto;
-    line-height: 1.6;
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+.join-section {
+    max-width: 48rem;
+    margin: 0 auto 6rem;
+    padding: 2rem;
+    border-top: 4px solid var(--primary-color);
+    background-color: #f1f4f1;
+}
+
+.join-section h2 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.join-section > p {
+    max-width: 60ch;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.interest-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #686868;
+    border-radius: 3px;
+    font: inherit;
+}
+
+.form-field input:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.interest-form button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    min-height: 2.75rem;
+    padding: 0.7rem 1.2rem;
+    border: 0;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.interest-form button:hover,
+.interest-form button:focus-visible {
+    background-color: #510051;
+}
+
+.form-tally {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 
@@ -240,6 +312,19 @@ nav a:focus-visible {
 
     .home-content h2 {
         font-size: 1.65rem;
+    }
+
+    .join-section {
+        margin-inline: -1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .interest-form {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-form button {
+        justify-self: stretch;
     }
 
     nav {
