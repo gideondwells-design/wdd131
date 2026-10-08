@@ -5,6 +5,17 @@ if (document.getElementById("lastupdated")) {
 	document.getElementById("lastupdated").textContent = document.lastModified;
 }
 
+const siteHeader = document.querySelector("header");
+
+if (siteHeader) {
+	const updateHeaderAppearance = () => {
+		siteHeader.classList.toggle("at-top", window.scrollY === 0);
+	};
+
+	updateHeaderAppearance();
+	window.addEventListener("scroll", updateHeaderAppearance, { passive: true });
+}
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.getElementById("site-navigation");
 

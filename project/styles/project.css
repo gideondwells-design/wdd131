@@ -1,7 +1,7 @@
 :root {
     --primary-color: rgb(99, 1, 99);
     --secondary-color: white;
-    --text-color: #1e1a1f;
+    --text-color: #000;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -18,32 +18,38 @@ footer {
 
 }
 
+
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     font-family: var(--heading-font);
     padding: 0.75rem 1.5rem;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 20;
-    height: 96px;
+    height: 104px;
     display: flex;
     align-items: center;
     gap: 1.25rem;
 }
 
 header img {
-    width: 4.25rem;
-    height: 4.25rem;
+    width: 7rem;
+    height: auto;
     object-fit: contain;
-    border-radius: 8px;
+    object-position: center;
+    border-radius: 50%;
 }
 
 header h1 {
     flex: 1;
     font-size: 1.8rem;
     color: var(--secondary-color);
+}
+
+header nav {
+    margin-left: auto;
 }
 
 header::after {
@@ -56,6 +62,45 @@ header::after {
     background: linear-gradient(to bottom, var(--primary-color), transparent);
     pointer-events: none;
     z-index: -1;
+}
+
+header.at-top {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+header.at-top img {
+    box-shadow: 0 0 20px 8px rgba(99, 1, 99, 0.7);
+}
+
+header.at-top::after {
+    display: none;
+}
+
+header.at-top h1,
+header.at-top nav a {
+    color: var(--primary-color);
+}
+
+header.at-top h1 {
+    flex: 0 1 auto;
+    width: fit-content;
+    padding: 0.08em 0.25em;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+}
+
+header.at-top nav a:hover,
+header.at-top nav a:focus-visible {
+    color: var(--text-color);
+}
+
+header.at-top .menu-toggle {
+    border-color: var(--text-color);
+}
+
+header.at-top .menu-toggle span {
+    background-color: var(--text-color);
 }
 
 nav ul {
@@ -91,31 +136,110 @@ nav a:focus-visible {
     display: none;
 }
 
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 
-@media (max-width: 770px) {
+.home-content {
+
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    background-color: #f1f4f1;
+}
+
+.home-content h2 {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 0.55rem;
+    color: var(--primary-color);
+    font-size: 2.25rem;
+    line-height: 1.15;
+    text-wrap: balance;
+}
+
+.home-content h2::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    margin: 0.65rem auto 0;
+    background-color: var(--primary-color);
+}
+
+.home-content p {
+    max-width: 60ch;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 600px) {
+    main {
+        padding-top: 104px;
+    }
+
     header {
-        height: auto;
-        min-height: 82px;
+        position: fixed;
+        top: 0;
         display: grid;
-        grid-template-columns: 48px minmax(0, 1fr) 48px;
+        grid-template-columns: 64px minmax(0, 1fr) 44px;
         gap: 0.75rem;
         padding: 0.65rem 0.75rem;
     }
 
-    header img {
-        width: 3rem;
-        height: 3rem;
+    header.at-top {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+
+    header::after {
+        display: none;
+    }
+
+    header.at-top img {
+        box-shadow: none;
     }
 
     header h1 {
+        min-width: 0;
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.4rem;
+    }
+
+    header.at-top h1 {
+        flex: 1;
+        width: auto;
+        justify-self: stretch;
+        padding: 0;
+        color: var(--secondary-color);
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    header.at-top nav a {
+        color: var(--secondary-color);
+    }
+
+    header.at-top .menu-toggle {
+        border-color: var(--secondary-color);
+    }
+
+    header.at-top .menu-toggle span {
+        background-color: var(--secondary-color);
+    }
+
+    .home-content h2 {
+        font-size: 1.65rem;
     }
 
     nav {
@@ -175,6 +299,7 @@ h2 {
     nav li a:hover,
     nav li a:focus-visible {
         background-color: rgba(255, 255, 255, 0.15);
+        color: var(--secondary-color);
     }
 }
 
