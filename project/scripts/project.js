@@ -56,3 +56,61 @@ if (menuToggle && navigation) {
 		}
 	});
 }
+
+const archeryEvents = [
+  { event: "Eastern National Bullseye Tournament", date: "5/7 - 5/9" },
+  { event: "Madison Spring Fling Bullseye", date: "4/18" },
+  { event: " Indiana NASP State Bullseye Tournament", date: "3/21" },
+  { event: "Madison March Madness Shootout Bullseye", date: "3/14" },
+  { event: "Seymour Middle School State Warm-Up", date: "2/21" },
+  { event: "Seymour Invitational and State Qualifier", date: "1/30 - 1/31" },
+  { event: "Brownstown Central Schools Bullseye State Qualifier", date: "1/17" }
+];
+
+const eventList = document.querySelector("#event-list");
+const eventLoadMarker = document.querySelector("#event-load-marker");
+
+if (eventList && eventLoadMarker) {
+	const batchSize = 3;
+	let nextEventIndex = 0;
+	let eventObserver;
+
+	const loadNextEvents = () => {
+		const nextEvents = archeryEvents.slice(nextEventIndex, nextEventIndex + batchSize);
+		const fragment = document.createDocumentFragment();
+
+		nextEvents.forEach(({ event, date }) => {
+			const listItem = document.createElement("li");
+			const eventName = document.createElement("h3");
+			const eventDate = document.createElement("p");
+
+			eventName.textContent = event;
+			eventDate.textContent = date;
+			listItem.append(eventName, eventDate);
+			fragment.append(listItem);
+		});
+
+		eventList.append(fragment);
+		nextEventIndex += nextEvents.length;
+
+		if (nextEventIndex >= archeryEvents.length) {
+			eventLoadMarker.hidden = true;
+			eventObserver?.disconnect();
+		}
+	};
+
+	loadNextEvents();
+
+	if ("IntersectionObserver" in window) {
+		eventObserver = new IntersectionObserver((entries) => {
+			if (entries.some((entry) => entry.isIntersecting)) {
+				loadNextEvents();
+			}
+		}, { rootMargin: "0px" });
+		eventObserver.observe(eventLoadMarker);
+	} else {
+		while (nextEventIndex < archeryEvents.length) {
+			loadNextEvents();
+		}
+	}
+}
