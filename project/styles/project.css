@@ -79,14 +79,13 @@ header.at-top::after {
 
 header.at-top h1,
 header.at-top nav a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 header.at-top h1 {
     flex: 0 1 auto;
     width: fit-content;
     padding: 0.08em 0.25em;
-    background-color: var(--secondary-color);
     border-radius: 3px;
 }
 
