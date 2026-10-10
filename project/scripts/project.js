@@ -5,26 +5,41 @@ if (document.getElementById("lastupdated")) {
 	document.getElementById("lastupdated").textContent = document.lastModified;
 }
 
+const INTEREST_COUNT_KEY = "shsArcheryInterestCount";
 const interestForm = document.querySelector("#interest-form");
 const interestTally = document.querySelector("#interest-tally");
-const interestTallyKey = "shsArcheryInterestTally";
+
+function getInterestCount() {
+	try {
+		const savedCount = Number(window.localStorage.getItem(INTEREST_COUNT_KEY));
+		return Number.isSafeInteger(savedCount) && savedCount >= 0 ? savedCount : 0;
+	} catch {
+		return 0;
+	}
+}
+
+function updateInterestTally() {
+	if (interestTally) {
+		interestTally.textContent = `Interest registrations saved on this device: ${getInterestCount()}`;
+	}
+}
 
 if (interestForm && interestTally) {
-	const updateInterestTally = () => {
-		const savedCount = Number(localStorage.getItem(interestTallyKey));
-		const count = Number.isSafeInteger(savedCount) && savedCount >= 0 ? savedCount : 0;
-		interestTally.textContent = `Interest registrations saved on this device: ${count}`;
-		return count;
-	};
-
 	updateInterestTally();
 	interestForm.addEventListener("submit", (event) => {
 		event.preventDefault();
-		localStorage.setItem(interestTallyKey, String(updateInterestTally() + 1));
-		updateInterestTally();
-		interestForm.reset();
+
+		try {
+			const nextCount = getInterestCount() + 1;
+			window.localStorage.setItem(INTEREST_COUNT_KEY, `${nextCount}`);
+			updateInterestTally();
+			interestForm.reset();
+		} catch {
+			interestTally.textContent = `Your interest was not saved because browser storage is unavailable.`;
+		}
 	});
 }
+
 
 const siteHeader = document.querySelector("header");
 
