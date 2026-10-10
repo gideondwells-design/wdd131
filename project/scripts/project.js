@@ -73,13 +73,13 @@ if (menuToggle && navigation) {
 }
 
 const archeryEvents = [
-  { event: "Eastern National Bullseye Tournament", date: "5/7 - 5/9" },
-  { event: "Madison Spring Fling Bullseye", date: "4/18" },
-  { event: " Indiana NASP State Bullseye Tournament", date: "3/21" },
-  { event: "Madison March Madness Shootout Bullseye", date: "3/14" },
-  { event: "Seymour Middle School State Warm-Up", date: "2/21" },
-  { event: "Seymour Invitational and State Qualifier", date: "1/30 - 1/31" },
-  { event: "Brownstown Central Schools Bullseye State Qualifier", date: "1/17" }
+  { event: "Eastern National Bullseye Tournament", date: "5/7/2027 - 5/9/2027" },
+  { event: "Madison Spring Fling Bullseye", date: "4/18/2027" },
+	{ event: "Indiana NASP State Bullseye Tournament", date: "3/21/2027" },
+  { event: "Madison March Madness Shootout Bullseye", date: "3/14/2027" },
+  { event: "Seymour Middle School State Warm-Up", date: "2/21/2027" },
+  { event: "Seymour Invitational and State Qualifier", date: "1/30/2027 - 1/31/2027" },
+  { event: "Brownstown Central Schools Bullseye State Qualifier", date: "1/17/2027" }
 ];
 
 const eventList = document.querySelector("#event-list");

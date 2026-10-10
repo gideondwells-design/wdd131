@@ -11,6 +11,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 30;
+    padding: 0.75rem 1rem;
+    transform: translateY(calc(-100% - 1rem));
+    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--body-font);
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 header,
 main,
 footer {
@@ -44,7 +63,7 @@ header img {
 
 header h1 {
     flex: 1;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--secondary-color);
 }
 
@@ -133,6 +152,11 @@ nav a:focus-visible {
 
 .menu-toggle {
     display: none;
+}
+
+.menu-toggle:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
 }
 
 .hero img {
@@ -321,6 +345,13 @@ nav a:focus-visible {
 .form-field input:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.35rem;
+    color: #444;
+    font-size: 0.875rem;
 }
 
 .interest-form button {
@@ -525,11 +556,6 @@ footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 20;
 }
 
 

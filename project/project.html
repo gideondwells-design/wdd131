@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seymour high School - Archery team - homepage</title>
-    <meta name="description" content="the Seymour High School Archery Team home page I made for my school project.">
+    <title>Seymour High School Archery Team | Home</title>
+    <meta name="description" content="Meet the Seymour High School Archery Team, learn about practices, and register your interest in joining.">
     <meta name="author" content="Gideon David Wells">
     <link rel="stylesheet" href="styles/project.css">
     <script src="scripts/project.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
-        <img src="images/logo_1536x1023.jpg" alt="SHS Archery Team Logo">
-        <h1>SHS - Archery Team</h1>
-        <nav>
+        <img src="images/logo_1536x1023.jpg" alt="Seymour High School Archery Team logo">
+        <h1>Seymour High School Archery Team</h1>
+        <nav aria-label="Main navigation">
             <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
                 <span></span>
                 <span></span>
@@ -27,14 +28,14 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
         <section class="hero">
-            <img src="images/hero.jpeg" alt="Archery Team Hero Image">
+            <img src="images/hero.jpeg" alt="Seymour High School archery team members pose in their team jerseys.">
         </section>
         <section class="home-content">
             <h2>The Seymour High School Archery Team</h2>
-            <p>The SHS Archery Team is dedicated to promoting archery skills and sportsmanship among students. Soaring for excellence in competition and camaraderie. Team members participate in local and regional competitions, striving to improve their accuracy and technique while representing their school with pride.</p>
-            <p>Practice sessions are held weekly on Tuesdays and Thursdays from 6:00 AM to 8:00 AM, and team members are encouraged to attend all meetings and competitions.</p>
+            <p>The Seymour High School (SHS) Archery Team helps students develop archery skills, accuracy, and sportsmanship. Members compete in local and regional tournaments while representing their school.</p>
+            <p>Team practices are held on Tuesdays and Thursdays from 6:00 to 8:00 a.m. Members are encouraged to attend practices, team meetings, and competitions.</p>
         </section>
         <section class="join-section" aria-labelledby="join-heading">
             <h2 id="join-heading">Interested in joining?</h2>
@@ -46,7 +47,8 @@
                 </div>
                 <div class="form-field">
                     <label for="number">Student Number</label>
-                    <input type="text" id="number" name="number" inputmode="numeric" required>
+                    <input type="text" id="number" name="number" inputmode="numeric" pattern="[0-9]+" aria-describedby="student-number-hint" required>
+                    <small class="form-hint" id="student-number-hint">Enter digits only.</small>
                 </div>
                 <button type="submit">Register Interest</button>
             </form>

@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seymour high School - Archery team - Events</title>
+    <title>Seymour High School Archery Team | Events</title>
     <meta name="description" content="Learn about the events of the Seymour High School Archery Team.">
     <meta name="author" content="Gideon David Wells">
     <link rel="stylesheet" href="styles/project.css">
     <script src="scripts/project.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
-        <img src="images/logo_1536x1023.jpg" alt="SHS Archery Team Logo">
-        <h1>SHS - Archery Team Events</h1>
-        <nav>
+        <img src="images/logo_1536x1023.jpg" alt="Seymour High School Archery Team logo">
+        <h1>Seymour High School Archery Team | Events</h1>
+        <nav aria-label="Main navigation">
             <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
                 <span></span>
                 <span></span>
@@ -27,9 +28,9 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
         <section class="hero events-hero">
-            <img src="images/hero_2.jpeg" alt="Archery Team at Competition">
+            <img src="images/hero_2.jpeg" alt="Seymour archers shoot at targets during an indoor competition.">
             <div class="hero-copy">
                 <p>Seymour High School Archery</p>
                 <h2>Competition Season</h2>
@@ -37,7 +38,7 @@
         </section>
         <section class="events-section">
             <h2>Upcoming Events</h2>
-            <p>Check out our upcoming archery competitions!</p>
+            <p>Review the team's scheduled competitions for the 2027 season.</p>
             <ul id="event-list" class="event-list" aria-live="polite"></ul>
         </section>
     </main>
