@@ -68,49 +68,20 @@ const archeryEvents = [
 ];
 
 const eventList = document.querySelector("#event-list");
-const eventLoadMarker = document.querySelector("#event-load-marker");
 
-if (eventList && eventLoadMarker) {
-	const batchSize = 3;
-	let nextEventIndex = 0;
-	let eventObserver;
+if (eventList) {
+	const fragment = document.createDocumentFragment();
 
-	const loadNextEvents = () => {
-		const nextEvents = archeryEvents.slice(nextEventIndex, nextEventIndex + batchSize);
-		const fragment = document.createDocumentFragment();
+	archeryEvents.forEach(({ event, date }) => {
+		const listItem = document.createElement("li");
+		const eventName = document.createElement("h3");
+		const eventDate = document.createElement("p");
 
-		nextEvents.forEach(({ event, date }) => {
-			const listItem = document.createElement("li");
-			const eventName = document.createElement("h3");
-			const eventDate = document.createElement("p");
+		eventName.textContent = event;
+		eventDate.textContent = date;
+		listItem.append(eventName, eventDate);
+		fragment.append(listItem);
+	});
 
-			eventName.textContent = event;
-			eventDate.textContent = date;
-			listItem.append(eventName, eventDate);
-			fragment.append(listItem);
-		});
-
-		eventList.append(fragment);
-		nextEventIndex += nextEvents.length;
-
-		if (nextEventIndex >= archeryEvents.length) {
-			eventLoadMarker.hidden = true;
-			eventObserver?.disconnect();
-		}
-	};
-
-	loadNextEvents();
-
-	if ("IntersectionObserver" in window) {
-		eventObserver = new IntersectionObserver((entries) => {
-			if (entries.some((entry) => entry.isIntersecting)) {
-				loadNextEvents();
-			}
-		}, { rootMargin: "0px" });
-		eventObserver.observe(eventLoadMarker);
-	} else {
-		while (nextEventIndex < archeryEvents.length) {
-			loadNextEvents();
-		}
-	}
+	eventList.append(fragment);
 }

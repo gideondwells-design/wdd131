@@ -142,6 +142,49 @@ nav a:focus-visible {
     object-fit: cover;
 }
 
+.events-hero img {
+    height: 100%;
+    object-position: center 42%;
+}
+
+.events-hero {
+    position: relative;
+    height: clamp(24rem, 58vh, 44rem);
+    margin: -1rem -1rem 0;
+    overflow: hidden;
+    background-color: #272323;
+}
+
+.events-hero::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15, 12, 15, 0.78), rgba(15, 12, 15, 0.08) 78%);
+    content: "";
+}
+
+.hero-copy {
+    position: absolute;
+    z-index: 1;
+    right: 1.5rem;
+    bottom: clamp(2rem, 8vh, 5rem);
+    left: max(1.5rem, calc((100% - 68rem) / 2));
+    color: white;
+}
+
+.hero-copy p {
+    margin-bottom: 0.6rem;
+    font-family: var(--body-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero-copy h2 {
+    max-width: 12ch;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
 
 .home-content {
 
@@ -183,51 +226,55 @@ nav a:focus-visible {
 }
 
 .events-section {
-    max-width: 52rem;
-    min-height: 75vh;
-    margin: 0 auto;
-    padding: 8rem 1rem 6rem;
+    margin: 0 -1rem;
+    padding: 4rem max(1rem, calc((100% - 68rem) / 2)) 6rem;
+    background-color: #f1f4f1;
 }
 
 .events-section h2 {
     margin-bottom: 0.5rem;
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 2.4rem;
+    line-height: 1.1;
 }
 
 .events-section > p {
     margin-bottom: 1.5rem;
     line-height: 1.5;
+    color: #444;
 }
 
 .event-list {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
     list-style: none;
 }
 
 .event-list li {
     display: flex;
-    min-height: 38vh;
+    min-height: 10rem;
     flex-direction: column;
     justify-content: center;
     gap: 0.75rem;
     padding: 1.5rem;
-    border-left: 4px solid var(--primary-color);
-    background-color: #f1f4f1;
+    border-top: 4px solid var(--primary-color);
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(30, 22, 30, 0.08);
 }
 
 .event-list h3 {
-    margin-bottom: 0.35rem;
-    font-size: 1.1rem;
+    max-width: 26ch;
+    font-size: 1.35rem;
+    line-height: 1.25;
 }
 
 .event-list p {
+    order: -1;
     color: #444;
-}
-
-.event-load-marker {
-    min-height: 1px;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .join-section {
@@ -361,8 +408,39 @@ nav a:focus-visible {
         font-size: 1.65rem;
     }
 
+    .events-hero {
+        height: clamp(20rem, 48vh, 30rem);
+        margin-top: 0;
+    }
+
+    .hero-copy {
+        left: 1.25rem;
+        bottom: 2rem;
+    }
+
+    .hero-copy h2 {
+        font-size: 2.8rem;
+    }
+
     .events-section {
-        padding-top: 2.5rem;
+        padding: 2.5rem 1rem 5rem;
+    }
+
+    .events-section h2 {
+        font-size: 1.9rem;
+    }
+
+    .event-list {
+        grid-template-columns: 1fr;
+    }
+
+    .event-list li {
+        min-height: 9rem;
+        padding: 1.25rem;
+    }
+
+    .event-list h3 {
+        font-size: 1.2rem;
     }
 
     .join-section {
